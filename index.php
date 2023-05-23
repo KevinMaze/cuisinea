@@ -1,15 +1,7 @@
 <?php 
-  define('_RECIPES_IMG_PATH_', 'uploads/recipes/');
+  require_once('templates/header.php');
 
-  $recipes = [
-    ['title' => 'Salade', 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 'image' => '3-salade.jpg'],
-    
-    ['title' => 'Gratin Dauphinois', 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 'image' => '2-gratin-dauphinois.jpg'],
-
-    ['title' => 'Mousse au chocolat', 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 'image' => '1-chocolate-au-mousse.jpg'],
-  ];
-
-  include('templates/header.php')
+  require_once('lib/recipe.php');
 ?>
 
 
@@ -26,8 +18,7 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
 
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Voir nos recettes</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+          <a href="recettes.php" class="btn btn-primary">Voir nos recettes</a>
 
         </div>
       </div>
@@ -36,22 +27,16 @@
 
   <div class="row px-5">
 
-    <?php foreach ($recipes as $key => $recipe) {?>
+    <?php foreach ($recipes as $key => $recipe) {
       
-      <div class="col-md-4">
-        <div class="card">
-          <img src=<?=_RECIPES_IMG_PATH_.$recipe['image'];?> class="card-img-top" alt="Salade">
-            <div class="card-body">
-              <h5 class="card-title"><?= $recipe['title'];?></h5>
-              <p class="card-text"><?= $recipe['description'];?></p>
-              <a href="#" class="btn btn-primary">Aller à la recette</a>
-            </div>
-        </div>
-      </div>
+      include('templates/recipe-partial.php')
+      ?>
+      
 
     <?php } ?>
   </div>
   
-<?php include('templates/footer.php') ?>
+<?php require_once('templates/footer.php'); ?>
 
-  
+
+<!-- reste 40 min episode 5 -->
