@@ -8,6 +8,8 @@
 
     ['title' => 'Mousse au chocolat', 'description' => 'Some quick example text to build on the card title and make up the bulk of the card\'s content.', 'image' => '1-chocolate-au-mousse.jpg'],
   ];
+
+  include('templates/header.php')
 ?>
 
 
@@ -48,9 +50,8 @@
       </div>
 
     <?php } ?>
-
   </div>
   
-
+<?php include('templates/footer.php') ?>
 
   
