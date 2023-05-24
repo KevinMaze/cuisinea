@@ -1,5 +1,8 @@
 <?php 
-define('_RECIPES_IMG_PATH_', 'uploads/recipes/');?>
+  require_once('lib/config.php');
+
+  $currentPage = basename($_SERVER['SCRIPT_NAME']);
+?>
 
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -22,12 +25,12 @@ define('_RECIPES_IMG_PATH_', 'uploads/recipes/');?>
           </a>
         </div>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-2 link-secondary">Accueil</a></li>
-          <li><a href="recettes.php" class="nav-link px-2">Recettes</a></li>
-          <li><a href="#" class="nav-link px-2">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2">About</a></li>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
+          <li class="nav-item"><a href="index.php" class="nav-link px-2 <?php if($currentPage == 'index.php'){echo 'active';}?>">Accueil</a></li>
+          <li class="nav-item"><a href="recettes.php" class="nav-link px-2 <?php if($currentPage == 'recettes.php'){echo 'active';}?>">Recettes</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
         </ul>
 
         <div class="col-md-3 text-end">

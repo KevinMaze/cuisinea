@@ -29,7 +29,7 @@
 
     <?php foreach ($recipes as $key => $recipe) {
       
-      include('templates/recipe-partial.php')
+      include('templates/recipe-partial.php');
       ?>
       
 
