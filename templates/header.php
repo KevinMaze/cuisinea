@@ -26,11 +26,9 @@
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
-          <li class="nav-item"><a href="index.php" class="nav-link px-2 <?php if($currentPage == 'index.php'){echo 'active';}?>">Accueil</a></li>
-          <li class="nav-item"><a href="recettes.php" class="nav-link px-2 <?php if($currentPage == 'recettes.php'){echo 'active';}?>">Recettes</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+          <?php foreach ($mainMenu as $key => $value) { ?>
+            <li class="nav-item"><a href=<?= $key ?> class="nav-link px-2 <?php if($currentPage == $key){echo 'active';}?>"><?= $value ?></a></li>
+          <?php }?>
         </ul>
 
         <div class="col-md-3 text-end">
@@ -39,3 +37,5 @@
         </div>
       </header>
     </div>
+
+    
